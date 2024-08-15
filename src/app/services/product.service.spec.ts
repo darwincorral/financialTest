@@ -87,4 +87,18 @@ describe('ProductService', () => {
     expect(req.request.method).toBe('DELETE');
     req.flush({});
   });
+
+  it('should verify if product ID exists', () => {
+    const mockId = '123';
+    const mockResponse = true;
+
+    service.verifyProductId(mockId).subscribe((exists) => {
+      expect(exists).toBe(true);
+    });
+
+    const req = httpMock.expectOne(`${apiUrl}/verification/${mockId}`);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockResponse);
+  });
+
 });

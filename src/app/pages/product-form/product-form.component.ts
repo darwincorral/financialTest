@@ -129,7 +129,7 @@ export class ProductFormComponent implements OnInit {
   
       return productService.verifyProductId(id).pipe(
         map(exists => (exists ? { idExists: true } : null)),
-        catchError(() => of(null)) // En caso de error en la solicitud, no bloquear el formulario
+        catchError(() => of(null))
       );
     };
   }
