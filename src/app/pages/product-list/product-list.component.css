@@ -1,0 +1,85 @@
+.list-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffff; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .btn-primary {
+    background-color: #ffc107;
+    color: #0f265c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    color: #2c2c30;
+  }
+  
+  .product-table th, .product-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .product-table th {
+    background-color: #f1f1f1;
+  }
+  
+  .product-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .records-select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  
+  button {
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    color: #007bff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    text-decoration: underline;
+  }
+  
+  button + button {
+    color: #dc3545;
+  }

@@ -1,0 +1,14 @@
+<div *ngIf="product" class="product-detail">
+    <img [src]="product.logo" alt="{{ product.name }}" class="product-logo" />
+    <div class="product-info">
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <p>Fecha de Liberación: {{ product.date_release | date }}</p>
+      <p>Fecha de Revisión: {{ product.date_revision | date }}</p>
+    </div>
+    <button (click)="onEdit()">Editar</button>
+    <button (click)="onDelete()">Eliminar</button>
+  </div>
+  
+  
+  

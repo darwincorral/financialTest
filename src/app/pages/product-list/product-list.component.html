@@ -1,0 +1,45 @@
+<div class="list-container">
+    <div class="header">
+      <input type="text" placeholder="Buscar..." (input)="onSearch($event)" class="search-input">
+      <button (click)="onAdd()" class="btn btn-primary">Agregar</button>
+    </div>
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>Logo</th>
+          <th>Nombre del producto</th>
+          <th>Descripción</th>
+          <th>Fecha de Liberación</th>
+          <th>Fecha de Revisión</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of filteredProducts" class="product-row">
+          <td><img [src]="product.logo" alt="{{ product.name }}" class="product-logo"></td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.date_release | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ product.date_revision | date: 'dd/MM/yyyy' }}</td>
+          <td>
+            <button (click)="onEdit(product)">Editar</button>
+            <button (click)="onDelete(product)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer">
+      <span>{{ filteredProducts.length }} Resultados</span>
+      <select (change)="onSelectChange($event)" class="records-select">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+    </div>
+  
+    <app-confirm-delete-modal *ngIf="showModal"
+                              [itemTitle]="item?.name"
+                              (confirm)="confirmDelete()"
+                              (cancel)="cancelDelete()"></app-confirm-delete-modal>
+  </div>
+  
